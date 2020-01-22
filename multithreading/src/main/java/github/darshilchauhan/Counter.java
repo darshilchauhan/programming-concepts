@@ -14,7 +14,7 @@ public class Counter {
         this.bookedTickets = new HashMap<String, Integer>();
     }
 
-    boolean bookTicket(String name, int tickets) {
+    synchronized boolean bookTicket(String name, int tickets) {
         if (this.remainingTickets >= tickets) {
             int randomNum = ThreadLocalRandom.current().nextInt(10, 501);
             try {
